@@ -10,6 +10,10 @@ require_once __DIR__ . '/../src/reporter.php';
  */
 class JUnitXMLReporter extends SimpleReporter
 {
+	public $doc;
+	public $root;
+	public $currCase;
+
     public function __construct()
     {
         parent::__construct();
