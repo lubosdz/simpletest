@@ -334,11 +334,11 @@ class SimpleTestCase
      */
     protected function escapeIncidentalPrintfSyntax($string)
     {
-        $pos = strpos($string, '%s');
+        $pos = strpos( (string) $string, '%s');
         if($pos !== false) {
             return substr($string, 0, $pos + 2) . str_replace('%', '%%', substr($string, $pos + 2));
         }
-        return str_replace('%', '%%', $string);
+        return str_replace('%', '%%', (string) $string);
     }
 
     /**
